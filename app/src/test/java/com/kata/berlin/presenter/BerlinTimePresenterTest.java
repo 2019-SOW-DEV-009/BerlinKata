@@ -1,9 +1,12 @@
 package com.kata.berlin.presenter;
 
 import com.kata.berlin.berlintime.BerlinTime;
+import com.kata.berlin.digitaltime.DigitalTime;
+import com.kata.berlin.digitaltime.InvalidDigitalTimeException;
 import com.kata.berlin.view.BerlinTimeView;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -37,5 +40,16 @@ public class BerlinTimePresenterTest {
         presenter.convertToBerlinTime("aa:25:48");
 
         verify(view, times(1)).showInvalidInput(anyString());
+    }
+
+    @Test
+    @Ignore
+    public void shouldReturnBerlinTimeEquivalentToBerlinTimeOf12Hours45MinutesAnd58Seconds() throws InvalidDigitalTimeException {
+        DigitalTime digitalTime = new DigitalTime(inputText);
+        BerlinTime expectedBerlinTime = new BerlinTime(digitalTime);
+
+        presenter.convertToBerlinTime(inputText);
+
+        verify(view, times(1)).showBerlinTime(expectedBerlinTime);
     }
 }
