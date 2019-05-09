@@ -25,6 +25,7 @@ public class BerlinSingleMinute {
             case 7:
                 return TWO_MINUTE;
             case 3:
+            case 8:
                 return THREE_MINUTE;
             case 4:
                 return FOUR_MINUTE;

@@ -48,6 +48,11 @@ public class BerlinSingleMinuteTest {
         assertBerlinSingleMinuteFor(7, "YYOO");
     }
 
+    @Test
+    public void shouldReturnSingleMinuteAsYYYOWhenDigitalMinuteIs8() {
+        assertBerlinSingleMinuteFor(8, "YYYO");
+    }
+
     private void assertBerlinSingleMinuteFor(int minute, String expectedSingleMinute) {
         DigitalMinute digitalMinute = new DigitalMinute(minute);
         BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
