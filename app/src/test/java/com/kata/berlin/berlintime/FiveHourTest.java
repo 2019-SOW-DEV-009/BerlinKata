@@ -34,6 +34,16 @@ public class FiveHourTest {
         assertBerlinFiveHourFor(20, "RRRR");
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoFiveHoursAreEqual() throws InvalidDigitalHourException {
+        assertEquals(createFiveHourWith(20), createFiveHourWith(20));
+    }
+
+    private FiveHour createFiveHourWith(int hour) throws InvalidDigitalHourException {
+        Hour hourOne = new Hour(hour);
+        return new FiveHour(hourOne);
+    }
+
     private void assertBerlinFiveHourFor(int hour, String expectedFiveHour) {
         Hour digitalHour = null;
         try {
