@@ -1,10 +1,12 @@
 package com.kata.berlin.berlintime;
 
 import com.kata.berlin.digitaltime.DigitalSecond;
+import com.kata.berlin.digitaltime.InvalidDigitalSecondsException;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BerlinSecondTest {
     @Test
@@ -23,7 +25,12 @@ public class BerlinSecondTest {
     }
 
     private void assertBerlinSecondsFor(int digitalSeconds, String expected) {
-        DigitalSecond digitalSecond = new DigitalSecond(digitalSeconds);
+        DigitalSecond digitalSecond = null;
+        try {
+            digitalSecond = new DigitalSecond(digitalSeconds);
+        } catch (InvalidDigitalSecondsException e) {
+            fail();
+        }
         BerlinSecond berlinSecond = new BerlinSecond(digitalSecond);
 
         String seconds = berlinSecond.seconds();
