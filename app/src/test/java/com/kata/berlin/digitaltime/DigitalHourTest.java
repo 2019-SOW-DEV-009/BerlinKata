@@ -21,6 +21,11 @@ public class DigitalHourTest {
         new DigitalHour(-1);
     }
 
+    @Test(expected = InvalidDigitalHourException.class)
+    public void shouldThrowInvalidDigitalHourExceptionWhenHourIsMorethan23() throws InvalidDigitalHourException {
+        new DigitalHour(24);
+    }
+
     private void assertDigitalHourFor(int hour1, int expectedHour) {
         DigitalHour digitalHour = null;
         try {
