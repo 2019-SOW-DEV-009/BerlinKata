@@ -12,9 +12,14 @@ class BerlinTimePresenter {
         this.view = view;
     }
 
-    public void convertToBerlinTime(String inputText) throws InvalidDigitalTimeException {
-        DigitalTime digitalTime = new DigitalTime(inputText);
-        BerlinTime berlinTime = new BerlinTime(digitalTime);
-        view.showBerlinTime(berlinTime);
+    public void convertToBerlinTime(String inputText) {
+        DigitalTime digitalTime = null;
+        try {
+            digitalTime = new DigitalTime(inputText);
+            BerlinTime berlinTime = new BerlinTime(digitalTime);
+            view.showBerlinTime(berlinTime);
+        } catch (InvalidDigitalTimeException e) {
+            view.showInvalidInput(e.getMessage());
+        }
     }
 }

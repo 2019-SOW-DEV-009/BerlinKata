@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -30,5 +31,12 @@ public class BerlinTimePresenterTest {
         presenter.convertToBerlinTime(inputText);
 
         verify(view, times(1)).showBerlinTime(any(BerlinTime.class));
+    }
+
+    @Test
+    public void shouldCallInvalidInputTextOnViewWhenConvertToBerlinTimeAndInputIsInvalid() throws InvalidDigitalTimeException {
+        presenter.convertToBerlinTime("aa:25:48");
+
+        verify(view, times(1)).showInvalidInput(anyString());
     }
 }
