@@ -10,7 +10,7 @@ public class DigitalTime {
     private static final int HOURS_POSITION = 0;
 
     private final DigitalSecond digitalSecond;
-    private final DigitalHour digitalHour;
+    private final Hour hour;
     private final DigitalMinute digitalMinute;
 
     public DigitalTime(String time) throws InvalidDigitalTimeException {
@@ -19,7 +19,7 @@ public class DigitalTime {
         String[] splitTime = time.split(":");
         digitalSecond = new DigitalSecond(splitTime[SECONDS_POSITION]);
         digitalMinute = new DigitalMinute(splitTime[MINUTES_POSITION]);
-        digitalHour = new DigitalHour(splitTime[HOURS_POSITION]);
+        hour = new Hour(splitTime[HOURS_POSITION]);
     }
 
     public DigitalSecond second() {
@@ -38,8 +38,8 @@ public class DigitalTime {
         }
     }
 
-    public DigitalHour hour() {
-        return digitalHour;
+    public Hour hour() {
+        return hour;
     }
 
     public DigitalMinute minute() {

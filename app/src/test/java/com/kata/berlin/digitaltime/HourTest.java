@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class DigitalHourTest {
+public class HourTest {
     @Test
     public void shouldReturnHourAs0WhenInitiatedWith0() {
         assertDigitalHourFor(0, 0);
@@ -18,18 +18,18 @@ public class DigitalHourTest {
 
     @Test(expected = InvalidDigitalHourException.class)
     public void shouldThrowInvalidDigitalHourExceptionWhenHourIsInNegative() throws InvalidDigitalHourException {
-        new DigitalHour(-1);
+        new Hour(-1);
     }
 
     @Test(expected = InvalidDigitalHourException.class)
     public void shouldThrowInvalidDigitalHourExceptionWhenHourIsMorethan23() throws InvalidDigitalHourException {
-        new DigitalHour(24);
+        new Hour(24);
     }
 
     private void assertDigitalHourFor(int hour1, int expectedHour) {
-        DigitalHour digitalHour = null;
+        Hour digitalHour = null;
         try {
-            digitalHour = new DigitalHour(hour1);
+            digitalHour = new Hour(hour1);
         } catch (InvalidDigitalHourException e) {
             fail();
         }

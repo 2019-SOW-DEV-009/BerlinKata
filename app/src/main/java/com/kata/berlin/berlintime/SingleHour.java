@@ -1,6 +1,6 @@
 package com.kata.berlin.berlintime;
 
-import com.kata.berlin.digitaltime.DigitalHour;
+import com.kata.berlin.digitaltime.Hour;
 
 import java.util.HashMap;
 
@@ -22,14 +22,14 @@ class SingleHour {
         SINGLE_HOUR_MAP.put(4, FOUR_HOUR);
     }
 
-    private final DigitalHour digitalHour;
+    private final Hour hour;
 
-    public SingleHour(DigitalHour digitalHour) {
-        this.digitalHour = digitalHour;
+    public SingleHour(Hour hour) {
+        this.hour = hour;
     }
 
     public String singleHour() {
-        int hourProportionToFive = digitalHour.hour() % 5;
+        int hourProportionToFive = hour.hour() % 5;
         return SINGLE_HOUR_MAP.get(hourProportionToFive);
     }
 }

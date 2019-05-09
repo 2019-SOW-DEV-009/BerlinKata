@@ -1,14 +1,14 @@
 package com.kata.berlin.digitaltime;
 
-public class DigitalHour {
+public class Hour {
     private final int hour;
 
-    public DigitalHour(int hour) throws InvalidDigitalHourException {
+    public Hour(int hour) throws InvalidDigitalHourException {
         validate(hour);
         this.hour = hour;
     }
 
-    public DigitalHour(String hour) throws InvalidDigitalHourException {
+    public Hour(String hour) throws InvalidDigitalHourException {
         this(Integer.parseInt(hour));
     }
 

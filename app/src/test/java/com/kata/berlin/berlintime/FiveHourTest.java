@@ -1,6 +1,6 @@
 package com.kata.berlin.berlintime;
 
-import com.kata.berlin.digitaltime.DigitalHour;
+import com.kata.berlin.digitaltime.Hour;
 import com.kata.berlin.digitaltime.InvalidDigitalHourException;
 
 import org.junit.Test;
@@ -35,9 +35,9 @@ public class FiveHourTest {
     }
 
     private void assertBerlinFiveHourFor(int hour, String expectedFiveHour) {
-        DigitalHour digitalHour = null;
+        Hour digitalHour = null;
         try {
-            digitalHour = new DigitalHour(hour);
+            digitalHour = new Hour(hour);
         } catch (InvalidDigitalHourException e) {
             fail();
         }
