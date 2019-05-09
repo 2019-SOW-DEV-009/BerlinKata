@@ -19,6 +19,7 @@ public class BerlinSingleMinute {
         int minute = digitalMinute.minute();
         switch (minute) {
             case 1:
+            case 6:
                 return ONE_MINUTE;
             case 2:
                 return TWO_MINUTE;
