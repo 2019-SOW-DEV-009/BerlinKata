@@ -6,25 +6,30 @@ import com.kata.berlin.digitaltime.InvalidDigitalHourException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BerlinFiveHourTest {
     @Test
-    public void shouldReturnFiveHourAsOOOOWhenDigitalHourIsLessThen5() throws InvalidDigitalHourException {
-        DigitalHour digitalHour = new DigitalHour(4);
-        BerlinFiveHour berlinFiveHour = new BerlinFiveHour(digitalHour);
-
-        String fiveHour = berlinFiveHour.fiveHour();
-
-        assertEquals("OOOO", fiveHour);
+    public void shouldReturnFiveHourAsOOOOWhenDigitalHourIsLessThen5() {
+        assertBerlinFiveHourFor(4, "OOOO");
     }
 
     @Test
-    public void shouldReturnFiveHourAsROOOWhenDigitalHourIs5() throws InvalidDigitalHourException {
-        DigitalHour digitalHour = new DigitalHour(5);
+    public void shouldReturnFiveHourAsROOOWhenDigitalHourIs5() {
+        assertBerlinFiveHourFor(5, "ROOO");
+    }
+
+    private void assertBerlinFiveHourFor(int hour, String expectedFiveHour) {
+        DigitalHour digitalHour = null;
+        try {
+            digitalHour = new DigitalHour(hour);
+        } catch (InvalidDigitalHourException e) {
+            fail();
+        }
         BerlinFiveHour berlinFiveHour = new BerlinFiveHour(digitalHour);
 
         String fiveHour = berlinFiveHour.fiveHour();
 
-        assertEquals("ROOO", fiveHour);
+        assertEquals(expectedFiveHour, fiveHour);
     }
 }
