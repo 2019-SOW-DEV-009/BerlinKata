@@ -21,4 +21,12 @@ public class MinuteTest {
     public void shouldThrowInvalidDigitalMinuteExceptionWhenMinuteIsMoreThan59() throws InvalidDigitalMinuteException {
         new Minute(60);
     }
+
+    @Test
+    public void shouldReturnTwoMinutesAreEqualWhenMinutesAreSame() throws InvalidDigitalMinuteException {
+        Minute minuteOne = new Minute(23);
+        Minute minuteTwo = new Minute(23);
+
+        assertEquals(minuteOne, minuteTwo);
+    }
 }
