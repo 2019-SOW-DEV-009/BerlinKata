@@ -3,12 +3,23 @@ package com.kata.berlin.berlintime;
 import com.kata.berlin.digitaltime.DigitalTime;
 import com.kata.berlin.digitaltime.InvalidDigitalTimeException;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class BerlinTimeTest {
+
+    private DigitalTime digitalTime;
+    private BerlinTime berlinTime;
+
+    @Before
+    public void setUp() throws Exception {
+        digitalTime = new DigitalTime("12:58:20");
+        berlinTime = new BerlinTime(digitalTime);
+    }
+
     @Test
     @Ignore
     public void shouldReturnBerlinTimeAsYOOOOOOOOOOOOOOOOOOOOOOOWhenDigitalTimeIsAllO() throws InvalidDigitalTimeException {
@@ -21,20 +32,14 @@ public class BerlinTimeTest {
     }
 
     @Test
-    public void shouldReturnBerlinSecondAsYWhenInitiatedWithDigitalTime12_58_20() throws InvalidDigitalTimeException {
-        DigitalTime digitalTime = new DigitalTime("12:58:20");
-        BerlinTime berlinTime = new BerlinTime(digitalTime);
-
+    public void shouldReturnBerlinSecondAsYWhenInitiatedWithDigitalTime12_58_20() {
         BerlinSecond berlinSeconds = berlinTime.seconds();
 
         assertEquals("Y", berlinSeconds.seconds());
     }
 
     @Test
-    public void shouldReturnBerlinFiveMinuteAsYYRYYRYYRYYWhenInitiatedWithDigitalTime12_58_20() throws InvalidDigitalTimeException {
-        DigitalTime digitalTime = new DigitalTime("12:58:20");
-        BerlinTime berlinTime = new BerlinTime(digitalTime);
-
+    public void shouldReturnBerlinFiveMinuteAsYYRYYRYYRYYWhenInitiatedWithDigitalTime12_58_20() {
         BerlinFiveMinute berlinFiveMinute = berlinTime.fiveMinutes();
 
         assertEquals("YYRYYRYYRYY", berlinFiveMinute.fiveMinute());
