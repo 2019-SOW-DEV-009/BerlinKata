@@ -7,6 +7,7 @@ public class BerlinSingleMinute {
     private static final String ZERO_MINUTE = "OOOO";
     private static final String ONE_MINUTE = "YOOO";
     private static final String TWO_MINUTE = "YYOO";
+    private static final String THREE_MINUTE = "YYYO";
     private final DigitalMinute digitalMinute;
 
     public BerlinSingleMinute(DigitalMinute digitalMinute) {
@@ -19,6 +20,9 @@ public class BerlinSingleMinute {
         }
         if (digitalMinute.minute() == 2) {
             return TWO_MINUTE;
+        }
+        if (digitalMinute.minute() == 3) {
+            return THREE_MINUTE;
         }
         return ZERO_MINUTE;
     }
