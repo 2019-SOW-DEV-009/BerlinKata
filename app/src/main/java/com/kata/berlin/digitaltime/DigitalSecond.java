@@ -7,6 +7,10 @@ public class DigitalSecond {
         this.seconds = seconds;
     }
 
+    public DigitalSecond(String seconds) {
+        this(Integer.parseInt(seconds));
+    }
+
     public int seconds() {
         return seconds;
     }
