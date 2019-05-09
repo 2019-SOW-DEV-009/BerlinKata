@@ -3,6 +3,7 @@ package com.kata.berlin.digitaltime;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class MinuteTest {
     @Test
@@ -28,5 +29,13 @@ public class MinuteTest {
         Minute minuteTwo = new Minute(23);
 
         assertEquals(minuteOne, minuteTwo);
+    }
+
+    @Test
+    public void shouldReturnTwoMinutesAreNotEqualWhenMinutesAreDifferent() throws InvalidDigitalMinuteException {
+        Minute minuteOne = new Minute(23);
+        Minute minuteTwo = new Minute(26);
+
+        assertNotEquals(minuteOne, minuteTwo);
     }
 }
