@@ -81,11 +81,11 @@ public class BerlinTimeTest {
     @Test
     public void shouldReturnBerlinTimeInReadableStringFormat() {
         assertEquals("BerlinTime {\n" +
-                "berlinSecond\t=\tY\n" +
-                "fiveHours\t=\tRROO\n" +
-                "singleHour\t=\tRROO\n" +
-                "fiveMinutes\t=\tYYRYYRYYRYY\n" +
-                "singleMinutes\t=\tYYYO\n" +
+                "Seconds\t=\tY\n" +
+                "FiveHours\t=\tRROO\n" +
+                "SingleHour\t=\tRROO\n" +
+                "FiveMinutes\t=\tYYRYYRYYRYY\n" +
+                "SingleMinutes\t=\tYYYO\n" +
                 "}", berlinTime.toString());
     }
 

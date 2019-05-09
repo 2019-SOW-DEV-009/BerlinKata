@@ -58,11 +58,11 @@ public class BerlinTime {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("BerlinTime {").append("\n");;
-        sb.append("berlinSecond\t=\t").append(berlinSecond.seconds()).append("\n");
-        sb.append("fiveHours\t=\t").append(fiveHours.fiveHour()).append("\n");
-        sb.append("singleHour\t=\t").append(singleHour.singleHour()).append("\n");
-        sb.append("fiveMinutes\t=\t").append(fiveMinutes.fiveMinute()).append("\n");
-        sb.append("singleMinutes\t=\t").append(singleMinutes.singleMinute()).append("\n");
+        sb.append("Seconds\t=\t").append(berlinSecond.seconds()).append("\n");
+        sb.append("FiveHours\t=\t").append(fiveHours.fiveHour()).append("\n");
+        sb.append("SingleHour\t=\t").append(singleHour.singleHour()).append("\n");
+        sb.append("FiveMinutes\t=\t").append(fiveMinutes.fiveMinute()).append("\n");
+        sb.append("SingleMinutes\t=\t").append(singleMinutes.singleMinute()).append("\n");
         sb.append('}');
         return sb.toString();
     }

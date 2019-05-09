@@ -40,7 +40,7 @@ public class DigitalToBerlinActivity extends AppCompatActivity implements Berlin
 
     @Override
     public void showBerlinTime(BerlinTime berlinTime) {
-        berlinTimeLabel.setText(String.format("Time \t: %s", berlinTime.time()));
+        berlinTimeLabel.setText(String.format("Time \t: %s\n\n%s", berlinTime.time(), berlinTime.toString()));
     }
 
     @Override
