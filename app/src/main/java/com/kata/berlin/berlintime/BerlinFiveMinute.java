@@ -8,6 +8,7 @@ class BerlinFiveMinute {
     private static final String FIVE_MINUTE = "YOOOOOOOOOO";
     private static final String TEN_MINUTE = "YYOOOOOOOOO";
     private static final String FIFTEEN_MINUTE = "YYROOOOOOOO";
+    private static final String TWENTY_MINUTE = "YYRYOOOOOOO";
     private final DigitalMinute digitalTime;
 
     public BerlinFiveMinute(DigitalMinute digitalTime) {
@@ -23,6 +24,8 @@ class BerlinFiveMinute {
                 return TEN_MINUTE;
             case 3:
                 return FIFTEEN_MINUTE;
+            case 4:
+                return TWENTY_MINUTE;
             default:
                 return ZERO_MINUTE;
         }
