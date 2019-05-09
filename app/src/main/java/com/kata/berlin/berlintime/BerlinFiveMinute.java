@@ -2,6 +2,8 @@ package com.kata.berlin.berlintime;
 
 import com.kata.berlin.digitaltime.DigitalMinute;
 
+import java.util.HashMap;
+
 class BerlinFiveMinute {
 
     private static final String ZERO_MINUTE = "OOOOOOOOOOO";
@@ -10,6 +12,19 @@ class BerlinFiveMinute {
     private static final String FIFTEEN_MINUTE = "YYROOOOOOOO";
     private static final String TWENTY_MINUTE = "YYRYOOOOOOO";
     private static final String TWENTYFIVE_MINUTE = "YYRYYOOOOOO";
+
+    private static final HashMap<Integer, String> FIVE_MINUTE_MAP;
+
+    static {
+        FIVE_MINUTE_MAP = new HashMap<>();
+        FIVE_MINUTE_MAP.put(0, ZERO_MINUTE);
+        FIVE_MINUTE_MAP.put(1, FIVE_MINUTE);
+        FIVE_MINUTE_MAP.put(2, TEN_MINUTE);
+        FIVE_MINUTE_MAP.put(3, FIFTEEN_MINUTE);
+        FIVE_MINUTE_MAP.put(4, TWENTY_MINUTE);
+        FIVE_MINUTE_MAP.put(5, TWENTYFIVE_MINUTE);
+    }
+
     private final DigitalMinute digitalTime;
 
     public BerlinFiveMinute(DigitalMinute digitalTime) {
@@ -18,19 +33,6 @@ class BerlinFiveMinute {
 
     public String fiveMinute() {
         int numberOfFiveMinutes = digitalTime.minute() / 5;
-        switch (numberOfFiveMinutes) {
-            case 1:
-                return FIVE_MINUTE;
-            case 2:
-                return TEN_MINUTE;
-            case 3:
-                return FIFTEEN_MINUTE;
-            case 4:
-                return TWENTY_MINUTE;
-            case 5:
-                return TWENTYFIVE_MINUTE;
-            default:
-                return ZERO_MINUTE;
-        }
+        return FIVE_MINUTE_MAP.get(numberOfFiveMinutes);
     }
 }
