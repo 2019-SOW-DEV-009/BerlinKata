@@ -16,18 +16,18 @@ public class BerlinSingleMinute {
     }
 
     public String singleMinute() {
-        if (digitalMinute.minute() == 1) {
-            return ONE_MINUTE;
+        int minute = digitalMinute.minute();
+        switch (minute) {
+            case 1:
+                return ONE_MINUTE;
+            case 2:
+                return TWO_MINUTE;
+            case 3:
+                return THREE_MINUTE;
+            case 4:
+                return FOUR_MINUTE;
+            default:
+                return ZERO_MINUTE;
         }
-        if (digitalMinute.minute() == 2) {
-            return TWO_MINUTE;
-        }
-        if (digitalMinute.minute() == 3) {
-            return THREE_MINUTE;
-        }
-        if (digitalMinute.minute() == 4) {
-            return FOUR_MINUTE;
-        }
-        return ZERO_MINUTE;
     }
 }
