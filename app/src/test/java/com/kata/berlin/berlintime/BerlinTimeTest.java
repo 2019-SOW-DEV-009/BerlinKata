@@ -70,4 +70,16 @@ public class BerlinTimeTest {
 
         assertEquals("YRROORROOYYRYYRYYRYYYYYO", time);
     }
+
+    @Test
+    public void shouldReturnTrueWhenTwoBerlinTimeAreEqual() throws InvalidDigitalTimeException {
+        String time = "11:55:48";
+
+        assertEquals(createBerlinTimeWith(time), createBerlinTimeWith(time));
+    }
+
+    private BerlinTime createBerlinTimeWith(String time) throws InvalidDigitalTimeException {
+        DigitalTime digitalTimeOne = new DigitalTime(time);
+        return new BerlinTime(digitalTimeOne);
+    }
 }
