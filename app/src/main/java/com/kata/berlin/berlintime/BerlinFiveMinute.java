@@ -15,13 +15,13 @@ class BerlinFiveMinute {
     }
 
     public String fiveMinute() {
-        int minutes = digitalTime.minute();
-        switch (minutes) {
-            case 5:
+        int numberOfFiveMinutes = digitalTime.minute() / 5;
+        switch (numberOfFiveMinutes) {
+            case 1:
                 return FIVE_MINUTE;
-            case 10:
+            case 2:
                 return TEN_MINUTE;
-            case 15:
+            case 3:
                 return FIFTEEN_MINUTE;
             default:
                 return ZERO_MINUTE;
