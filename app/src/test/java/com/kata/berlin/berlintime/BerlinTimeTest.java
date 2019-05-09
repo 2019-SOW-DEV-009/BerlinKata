@@ -19,4 +19,14 @@ public class BerlinTimeTest {
 
         assertEquals("YOOOOOOOOOOOOOOOOOOOOOOO", time);
     }
+
+    @Test
+    public void shouldReturnBerlinSecondAsYWhenInitiatedWithDigitalTime12_58_20() throws InvalidDigitalTimeException {
+        DigitalTime digitalTime = new DigitalTime("12:58:20");
+        BerlinTime berlinTime = new BerlinTime(digitalTime);
+
+        BerlinSecond berlinSeconds = berlinTime.seconds();
+
+        assertEquals("Y", berlinSeconds.seconds());
+    }
 }
