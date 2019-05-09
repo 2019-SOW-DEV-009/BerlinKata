@@ -22,15 +22,11 @@ public class DigitalTime {
         if (time == null) {
             throw new InvalidDigitalTimeException("Time cannot be null");
         }
-        if (time.trim().length() != 8) {
-            throw new InvalidDigitalTimeException("Invalid Time");
-        }
-
+        time = time.trim();
         Pattern pattern = Pattern.compile(TIME_REGEX);
         Matcher matcher = pattern.matcher(time);
         if (!matcher.matches()) {
             throw new InvalidDigitalTimeException("Invalid Time format");
         }
-
     }
 }
