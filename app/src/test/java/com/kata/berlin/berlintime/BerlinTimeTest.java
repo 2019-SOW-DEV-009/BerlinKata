@@ -59,9 +59,9 @@ public class BerlinTimeTest {
 
     @Test
     public void shouldReturnBerlinFiveHourAsRROO() {
-        BerlinFiveHour berlinFiveHour = berlinTime.fiveHours();
+        FiveHour fiveHour = berlinTime.fiveHours();
 
-        assertEquals("RROO", berlinFiveHour.fiveHour());
+        assertEquals("RROO", fiveHour.fiveHour());
     }
 
     @Test

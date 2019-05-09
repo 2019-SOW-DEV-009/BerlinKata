@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class BerlinFiveHourTest {
+public class FiveHourTest {
     @Test
     public void shouldReturnFiveHourAsOOOOWhenDigitalHourIsLessThen5() {
         assertBerlinFiveHourFor(4, "OOOO");
@@ -41,7 +41,7 @@ public class BerlinFiveHourTest {
         } catch (InvalidDigitalHourException e) {
             fail();
         }
-        BerlinFiveHour berlinFiveHour = new BerlinFiveHour(digitalHour);
+        FiveHour berlinFiveHour = new FiveHour(digitalHour);
 
         String fiveHour = berlinFiveHour.fiveHour();
 
