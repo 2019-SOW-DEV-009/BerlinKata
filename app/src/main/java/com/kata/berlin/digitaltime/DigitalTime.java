@@ -1,6 +1,10 @@
 package com.kata.berlin.digitaltime;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class DigitalTime {
+    private static final String TIME_REGEX = "^[0-2][0-3]:[0-5][0-9]:[0-5][0-9]$";
     private final DigitalSecond digitalSecond;
 
     public DigitalTime(String time) throws InvalidDigitalTimeException {
@@ -21,5 +25,12 @@ public class DigitalTime {
         if (time.trim().length() != 8) {
             throw new InvalidDigitalTimeException("Invalid Time");
         }
+
+        Pattern pattern = Pattern.compile(TIME_REGEX);
+        Matcher matcher = pattern.matcher(time);
+        if (!matcher.matches()) {
+            throw new InvalidDigitalTimeException("Invalid Time format");
+        }
+
     }
 }

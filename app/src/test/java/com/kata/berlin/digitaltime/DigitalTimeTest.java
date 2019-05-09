@@ -25,4 +25,9 @@ public class DigitalTimeTest {
     public void shouldThrowInvalidDigitalTimeExceptionWhenTimeLengthNot8() throws InvalidDigitalTimeException {
         new DigitalTime("00:00:1");
     }
+
+    @Test(expected = InvalidDigitalTimeException.class)
+    public void shouldThrowInvalidDigitalTimeExceptionWhenTimeContainsAlphabets() throws InvalidDigitalTimeException {
+        new DigitalTime("00:aa:00");
+    }
 }
