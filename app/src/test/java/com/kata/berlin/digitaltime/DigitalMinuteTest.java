@@ -16,4 +16,9 @@ public class DigitalMinuteTest {
     public void shouldThrowInvalidDigitalMinuteExceptionWhenMinuteIsNegative() throws InvalidDigitalMinuteException {
         new DigitalMinute(-1);
     }
+
+    @Test(expected = InvalidDigitalMinuteException.class)
+    public void shouldThrowInvalidDigitalMinuteExceptionWhenMinuteIsMoreThan59() throws InvalidDigitalMinuteException {
+        new DigitalMinute(60);
+    }
 }

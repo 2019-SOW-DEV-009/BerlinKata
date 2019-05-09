@@ -7,6 +7,9 @@ public class DigitalMinute {
         if (minute < 0) {
             throw new InvalidDigitalMinuteException("Minute cannot be in negative");
         }
+        if (minute > 59) {
+            throw new InvalidDigitalMinuteException("Minute cannot be more than 59");
+        }
         this.minute = minute;
     }
 
