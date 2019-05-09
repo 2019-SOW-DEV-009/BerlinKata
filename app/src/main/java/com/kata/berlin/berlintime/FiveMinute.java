@@ -4,7 +4,7 @@ import com.kata.berlin.digitaltime.DigitalMinute;
 
 import java.util.HashMap;
 
-class BerlinFiveMinute {
+class FiveMinute {
 
     private static final String ZERO_MINUTE = "OOOOOOOOOOO";
     private static final String FIVE_MINUTE = "YOOOOOOOOOO";
@@ -39,7 +39,7 @@ class BerlinFiveMinute {
 
     private final DigitalMinute digitalTime;
 
-    public BerlinFiveMinute(DigitalMinute digitalTime) {
+    public FiveMinute(DigitalMinute digitalTime) {
         this.digitalTime = digitalTime;
     }
 

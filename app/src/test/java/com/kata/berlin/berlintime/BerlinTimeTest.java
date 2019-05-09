@@ -38,9 +38,9 @@ public class BerlinTimeTest {
 
     @Test
     public void shouldReturnBerlinFiveMinuteAsYYRYYRYYRYYWhenInitiatedWithDigitalTime12_58_20() {
-        BerlinFiveMinute berlinFiveMinute = berlinTime.fiveMinutes();
+        FiveMinute fiveMinute = berlinTime.fiveMinutes();
 
-        assertEquals("YYRYYRYYRYY", berlinFiveMinute.fiveMinute());
+        assertEquals("YYRYYRYYRYY", fiveMinute.fiveMinute());
     }
 
     @Test
