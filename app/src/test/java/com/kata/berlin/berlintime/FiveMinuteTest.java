@@ -6,6 +6,7 @@ import com.kata.berlin.digitaltime.Minute;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 
 public class FiveMinuteTest {
@@ -90,6 +91,16 @@ public class FiveMinuteTest {
         assertEquals(fiveMinuteOne, fiveMinuteTwo);
     }
 
+    @Test
+    public void shouldReturnFalseWhenTwoFiveObjectAreNotEqual() throws InvalidDigitalMinuteException {
+        Minute minute = new Minute(26);
+        Minute minuteTwo = new Minute(30);
+
+        FiveMinute fiveMinuteTwo = new FiveMinute(minute);
+        FiveMinute fiveMinuteOne = new FiveMinute(minuteTwo);
+
+        assertNotEquals(fiveMinuteOne, fiveMinuteTwo);
+    }
 
     private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) {
         Minute digitalTime = null;
