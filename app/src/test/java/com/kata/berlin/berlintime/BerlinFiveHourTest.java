@@ -17,4 +17,14 @@ public class BerlinFiveHourTest {
 
         assertEquals("OOOO", fiveHour);
     }
+
+    @Test
+    public void shouldReturnFiveHourAsROOOWhenDigitalHourIs5() throws InvalidDigitalHourException {
+        DigitalHour digitalHour = new DigitalHour(5);
+        BerlinFiveHour berlinFiveHour = new BerlinFiveHour(digitalHour);
+
+        String fiveHour = berlinFiveHour.fiveHour();
+
+        assertEquals("ROOO", fiveHour);
+    }
 }
