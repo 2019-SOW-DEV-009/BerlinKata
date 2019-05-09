@@ -1,6 +1,6 @@
 package com.kata.berlin.berlintime;
 
-import com.kata.berlin.digitaltime.DigitalMinute;
+import com.kata.berlin.digitaltime.Minute;
 
 import java.util.HashMap;
 
@@ -22,14 +22,14 @@ public class SingleMinute {
         SINGLE_MINUTE_MAP.put(4, FOUR_MINUTE);
     }
 
-    private final DigitalMinute digitalMinute;
+    private final Minute minute;
 
-    public SingleMinute(DigitalMinute digitalMinute) {
-        this.digitalMinute = digitalMinute;
+    public SingleMinute(Minute minute) {
+        this.minute = minute;
     }
 
     public String singleMinute() {
-        int proportionToFive = digitalMinute.minute() % 5;
+        int proportionToFive = minute.minute() % 5;
         return SINGLE_MINUTE_MAP.get(proportionToFive);
     }
 }

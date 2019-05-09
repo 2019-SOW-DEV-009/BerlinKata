@@ -11,14 +11,14 @@ public class DigitalTime {
 
     private final DigitalSecond digitalSecond;
     private final Hour hour;
-    private final DigitalMinute digitalMinute;
+    private final Minute minute;
 
     public DigitalTime(String time) throws InvalidDigitalTimeException {
         validate(time);
 
         String[] splitTime = time.split(":");
         digitalSecond = new DigitalSecond(splitTime[SECONDS_POSITION]);
-        digitalMinute = new DigitalMinute(splitTime[MINUTES_POSITION]);
+        minute = new Minute(splitTime[MINUTES_POSITION]);
         hour = new Hour(splitTime[HOURS_POSITION]);
     }
 
@@ -42,7 +42,7 @@ public class DigitalTime {
         return hour;
     }
 
-    public DigitalMinute minute() {
-        return digitalMinute;
+    public Minute minute() {
+        return minute;
     }
 }
