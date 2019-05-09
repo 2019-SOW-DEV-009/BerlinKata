@@ -6,20 +6,26 @@ import com.kata.berlin.digitaltime.InvalidDigitalMinuteException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BerlinFiveMinuteTest {
     @Test
-    public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIs0() throws InvalidDigitalMinuteException {
+    public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIs0() {
         assertBerlinFiveMinuteFor(0, "OOOOOOOOOOO");
     }
 
     @Test
-    public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIsLessThan5() throws InvalidDigitalMinuteException {
+    public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIsLessThan5() {
         assertBerlinFiveMinuteFor(4, "OOOOOOOOOOO");
     }
 
-    private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) throws InvalidDigitalMinuteException {
-        DigitalMinute digitalTime = new DigitalMinute(minute);
+    private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) {
+        DigitalMinute digitalTime = null;
+        try {
+            digitalTime = new DigitalMinute(minute);
+        } catch (InvalidDigitalMinuteException e) {
+            fail();
+        }
         BerlinFiveMinute berlinFiveMinute = new BerlinFiveMinute(digitalTime);
 
         String fiveMinute = berlinFiveMinute.fiveMinute();
