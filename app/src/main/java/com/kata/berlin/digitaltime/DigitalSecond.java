@@ -24,4 +24,12 @@ public class DigitalSecond {
             throw new InvalidDigitalSecondsException("Seconds cannot be more than 59");
         }
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DigitalSecond)) return false;
+        DigitalSecond that = (DigitalSecond) o;
+        return seconds == that.seconds;
+    }
 }
