@@ -2,11 +2,22 @@ package com.kata.berlin.berlintime;
 
 import com.kata.berlin.digitaltime.DigitalHour;
 
+import java.util.HashMap;
+
 class BerlinSingleHour {
 
     private static final String ZERO_HOUR = "OOOO";
     private static final String ONE_HOUR = "ROOO";
     private static final String TWO_HOUR = "RROO";
+    private static final HashMap<Integer, String> SINGLE_HOUR_MAP;
+
+    static {
+        SINGLE_HOUR_MAP = new HashMap<>();
+        SINGLE_HOUR_MAP.put(0, ZERO_HOUR);
+        SINGLE_HOUR_MAP.put(1, ONE_HOUR);
+        SINGLE_HOUR_MAP.put(2, TWO_HOUR);
+    }
+
     private final DigitalHour digitalHour;
 
     public BerlinSingleHour(DigitalHour digitalHour) {
@@ -15,12 +26,6 @@ class BerlinSingleHour {
 
     public String singleHour() {
         int hour = digitalHour.hour();
-        if (hour == 1) {
-            return ONE_HOUR;
-        }
-        if (hour == 2) {
-            return TWO_HOUR;
-        }
-        return ZERO_HOUR;
+        return SINGLE_HOUR_MAP.get(hour);
     }
 }
