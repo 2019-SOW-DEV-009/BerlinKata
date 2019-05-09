@@ -6,7 +6,6 @@ import com.kata.berlin.digitaltime.InvalidDigitalTimeException;
 import com.kata.berlin.view.BerlinTimeView;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -43,7 +42,6 @@ public class BerlinTimePresenterTest {
     }
 
     @Test
-    @Ignore
     public void shouldReturnBerlinTimeEquivalentToBerlinTimeOf12Hours45MinutesAnd58Seconds() throws InvalidDigitalTimeException {
         DigitalTime digitalTime = new DigitalTime(inputText);
         BerlinTime expectedBerlinTime = new BerlinTime(digitalTime);
