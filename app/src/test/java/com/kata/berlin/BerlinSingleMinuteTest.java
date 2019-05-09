@@ -2,10 +2,12 @@ package com.kata.berlin;
 
 import com.kata.berlin.berlintime.BerlinSingleMinute;
 import com.kata.berlin.digitaltime.DigitalMinute;
+import com.kata.berlin.digitaltime.InvalidDigitalMinuteException;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class BerlinSingleMinuteTest {
     @Test
@@ -59,7 +61,12 @@ public class BerlinSingleMinuteTest {
     }
 
     private void assertBerlinSingleMinuteFor(int minute, String expectedSingleMinute) {
-        DigitalMinute digitalMinute = new DigitalMinute(minute);
+        DigitalMinute digitalMinute = null;
+        try {
+            digitalMinute = new DigitalMinute(minute);
+        } catch (InvalidDigitalMinuteException e) {
+            fail();
+        }
         BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
 
         String singleMinute = berlinSingleMinute.singleMinute();
