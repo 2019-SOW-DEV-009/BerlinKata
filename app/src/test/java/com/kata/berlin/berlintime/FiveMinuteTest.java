@@ -82,24 +82,17 @@ public class FiveMinuteTest {
 
     @Test
     public void shouldReturnTrueWhenTwoFiveMinuteObjectAreEqual() throws InvalidDigitalMinuteException {
-        Minute minuteOne = new Minute(29);
-        Minute minuteTwo = new Minute(29);
-
-        FiveMinute fiveMinuteTwo = new FiveMinute(minuteOne);
-        FiveMinute fiveMinuteOne = new FiveMinute(minuteTwo);
-
-        assertEquals(fiveMinuteOne, fiveMinuteTwo);
+        assertEquals(createFiveMinuteWith(29), createFiveMinuteWith(29));
     }
 
     @Test
     public void shouldReturnFalseWhenTwoFiveObjectAreNotEqual() throws InvalidDigitalMinuteException {
-        Minute minute = new Minute(26);
-        Minute minuteTwo = new Minute(30);
+        assertNotEquals(createFiveMinuteWith(30), createFiveMinuteWith(26));
+    }
 
-        FiveMinute fiveMinuteTwo = new FiveMinute(minute);
-        FiveMinute fiveMinuteOne = new FiveMinute(minuteTwo);
-
-        assertNotEquals(fiveMinuteOne, fiveMinuteTwo);
+    private FiveMinute createFiveMinuteWith(int minute1) throws InvalidDigitalMinuteException {
+        Minute minute = new Minute(minute1);
+        return new FiveMinute(minute);
     }
 
     private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) {
