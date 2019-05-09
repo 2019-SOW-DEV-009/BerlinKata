@@ -15,15 +15,16 @@ class BerlinFiveMinute {
     }
 
     public String fiveMinute() {
-        if (digitalTime.minute() == 5) {
-            return FIVE_MINUTE;
+        int minutes = digitalTime.minute();
+        switch (minutes) {
+            case 5:
+                return FIVE_MINUTE;
+            case 10:
+                return TEN_MINUTE;
+            case 15:
+                return FIFTEEN_MINUTE;
+            default:
+                return ZERO_MINUTE;
         }
-        if (digitalTime.minute() == 10) {
-            return TEN_MINUTE;
-        }
-        if (digitalTime.minute() == 15) {
-            return FIFTEEN_MINUTE;
-        }
-        return ZERO_MINUTE;
     }
 }
