@@ -10,21 +10,20 @@ import static org.junit.Assert.assertEquals;
 public class BerlinFiveMinuteTest {
     @Test
     public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIs0() throws InvalidDigitalMinuteException {
-        DigitalMinute digitalTime = new DigitalMinute(0);
-        BerlinFiveMinute berlinFiveMinute = new BerlinFiveMinute(digitalTime);
-
-        String fiveMinute = berlinFiveMinute.fiveMinute();
-
-        assertEquals("OOOOOOOOOOO", fiveMinute);
+        assertBerlinFiveMinuteFor(0, "OOOOOOOOOOO");
     }
 
     @Test
     public void shouldReturnFiveMinuteAs11_O_WhenDigitalMinuteIsLessThan5() throws InvalidDigitalMinuteException {
-        DigitalMinute digitalTime = new DigitalMinute(4);
+        assertBerlinFiveMinuteFor(4, "OOOOOOOOOOO");
+    }
+
+    private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) throws InvalidDigitalMinuteException {
+        DigitalMinute digitalTime = new DigitalMinute(minute);
         BerlinFiveMinute berlinFiveMinute = new BerlinFiveMinute(digitalTime);
 
         String fiveMinute = berlinFiveMinute.fiveMinute();
 
-        assertEquals("OOOOOOOOOOO", fiveMinute);
+        assertEquals(expectedFiveMinute, fiveMinute);
     }
 }
