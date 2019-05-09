@@ -17,4 +17,14 @@ public class BerlinSingleHourTest {
 
         assertEquals("OOOO", singleHour);
     }
+
+    @Test
+    public void shouldReturnSingleHourAsROOOWhenInitiatedWith1Hour() throws InvalidDigitalHourException {
+        DigitalHour digitalHour = new DigitalHour(1);
+        BerlinSingleHour berlinSingleHour = new BerlinSingleHour(digitalHour);
+
+        String singleHour = berlinSingleHour.singleHour();
+
+        assertEquals("ROOO", singleHour);
+    }
 }
