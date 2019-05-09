@@ -16,6 +16,14 @@ public class Hour {
         return hour;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Hour)) return false;
+        Hour hour1 = (Hour) o;
+        return hour == hour1.hour;
+    }
+
     private void validate(int hour) throws InvalidDigitalHourException {
         if (hour < 0) {
             throw new InvalidDigitalHourException("Hours cannot be in negative");

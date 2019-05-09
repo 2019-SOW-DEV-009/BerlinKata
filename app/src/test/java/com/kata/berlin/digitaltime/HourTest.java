@@ -26,6 +26,14 @@ public class HourTest {
         new Hour(24);
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoHoursAreEqual() throws InvalidDigitalHourException {
+        Hour hourOne = new Hour(23);
+        Hour hourTwo = new Hour(23);
+
+        assertEquals(hourOne, hourTwo);
+    }
+
     private void assertDigitalHourFor(int hour1, int expectedHour) {
         Hour digitalHour = null;
         try {
