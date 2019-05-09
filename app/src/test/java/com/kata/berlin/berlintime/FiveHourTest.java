@@ -6,6 +6,7 @@ import com.kata.berlin.digitaltime.InvalidDigitalHourException;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 
 public class FiveHourTest {
@@ -37,6 +38,11 @@ public class FiveHourTest {
     @Test
     public void shouldReturnTrueWhenTwoFiveHoursAreEqual() throws InvalidDigitalHourException {
         assertEquals(createFiveHourWith(20), createFiveHourWith(20));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenTwoFiveHoursAreNotEqual() throws InvalidDigitalHourException {
+        assertNotEquals(createFiveHourWith(20), createFiveHourWith(23));
     }
 
     private FiveHour createFiveHourWith(int hour) throws InvalidDigitalHourException {
