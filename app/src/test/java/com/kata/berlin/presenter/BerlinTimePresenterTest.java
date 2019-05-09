@@ -16,20 +16,19 @@ import static org.mockito.Mockito.verify;
 
 public class BerlinTimePresenterTest {
 
-    private String inputText;
+    private static final String VALID_INPUT_TEXT = "12:45:58";
     private BerlinTimeView view;
     private BerlinTimePresenter presenter;
 
     @Before
     public void setUp() {
-        inputText = "12:45:58";
         view = mock(BerlinTimeView.class);
         presenter = new BerlinTimePresenter(view);
     }
 
     @Test
     public void shouldCallShowBerlinTimeOnViewWhenConvertToBerlinTimeIsCalled() {
-        presenter.convertToBerlinTime(inputText);
+        presenter.convertToBerlinTime(VALID_INPUT_TEXT);
 
         verify(view, times(1)).showBerlinTime(any(BerlinTime.class));
     }
@@ -42,11 +41,11 @@ public class BerlinTimePresenterTest {
     }
 
     @Test
-    public void shouldReturnBerlinTimeEquivalentToBerlinTimeOf12Hours45MinutesAnd58Seconds() throws InvalidDigitalTimeException {
-        DigitalTime digitalTime = new DigitalTime(inputText);
+    public void shouldReturnBerlinTimeEquivalentToBerlinTimeOfValidInputText() throws InvalidDigitalTimeException {
+        DigitalTime digitalTime = new DigitalTime(VALID_INPUT_TEXT);
         BerlinTime expectedBerlinTime = new BerlinTime(digitalTime);
 
-        presenter.convertToBerlinTime(inputText);
+        presenter.convertToBerlinTime(VALID_INPUT_TEXT);
 
         verify(view, times(1)).showBerlinTime(expectedBerlinTime);
     }
