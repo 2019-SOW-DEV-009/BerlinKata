@@ -13,4 +13,13 @@ public class DigitalHourTest {
 
         assertEquals(0, hour);
     }
+
+    @Test
+    public void shouldReturnHourAs1WhenInitiatedWith1() {
+        DigitalHour digitalHour = new DigitalHour(1);
+
+        int hour = digitalHour.hour();
+
+        assertEquals(1, hour);
+    }
 }
