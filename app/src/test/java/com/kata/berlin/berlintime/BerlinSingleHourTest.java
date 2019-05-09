@@ -10,21 +10,20 @@ import static org.junit.Assert.assertEquals;
 public class BerlinSingleHourTest {
     @Test
     public void shouldReturnSingleHourAsOOOOWhenInitiatedWith0Hour() throws InvalidDigitalHourException {
-        DigitalHour digitalHour = new DigitalHour(0);
-        BerlinSingleHour berlinSingleHour = new BerlinSingleHour(digitalHour);
-
-        String singleHour = berlinSingleHour.singleHour();
-
-        assertEquals("OOOO", singleHour);
+        assertSingleHourFor(0, "OOOO");
     }
 
     @Test
     public void shouldReturnSingleHourAsROOOWhenInitiatedWith1Hour() throws InvalidDigitalHourException {
-        DigitalHour digitalHour = new DigitalHour(1);
+        assertSingleHourFor(1, "ROOO");
+    }
+
+    private void assertSingleHourFor(int hour, String expectedSingleHour) throws InvalidDigitalHourException {
+        DigitalHour digitalHour = new DigitalHour(hour);
         BerlinSingleHour berlinSingleHour = new BerlinSingleHour(digitalHour);
 
         String singleHour = berlinSingleHour.singleHour();
 
-        assertEquals("ROOO", singleHour);
+        assertEquals(expectedSingleHour, singleHour);
     }
 }
