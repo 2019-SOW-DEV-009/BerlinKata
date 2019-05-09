@@ -54,4 +54,16 @@ public class BerlinTime {
                 Objects.equals(singleHour, that.singleHour) &&
                 Objects.equals(fiveHours, that.fiveHours);
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("BerlinTime {").append("\n");;
+        sb.append("berlinSecond\t=\t").append(berlinSecond.seconds()).append("\n");
+        sb.append("fiveHours\t=\t").append(fiveHours.fiveHour()).append("\n");
+        sb.append("singleHour\t=\t").append(singleHour.singleHour()).append("\n");
+        sb.append("fiveMinutes\t=\t").append(fiveMinutes.fiveMinute()).append("\n");
+        sb.append("singleMinutes\t=\t").append(singleMinutes.singleMinute()).append("\n");
+        sb.append('}');
+        return sb.toString();
+    }
 }

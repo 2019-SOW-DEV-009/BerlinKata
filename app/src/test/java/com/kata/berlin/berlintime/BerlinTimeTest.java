@@ -78,6 +78,17 @@ public class BerlinTimeTest {
         assertEquals(createBerlinTimeWith(time), createBerlinTimeWith(time));
     }
 
+    @Test
+    public void shouldReturnBerlinTimeInReadableStringFormat() {
+        assertEquals("BerlinTime {\n" +
+                "berlinSecond\t=\tY\n" +
+                "fiveHours\t=\tRROO\n" +
+                "singleHour\t=\tRROO\n" +
+                "fiveMinutes\t=\tYYRYYRYYRYY\n" +
+                "singleMinutes\t=\tYYYO\n" +
+                "}", berlinTime.toString());
+    }
+
     private BerlinTime createBerlinTimeWith(String time) throws InvalidDigitalTimeException {
         DigitalTime digitalTimeOne = new DigitalTime(time);
         return new BerlinTime(digitalTimeOne);
