@@ -5,7 +5,7 @@ import com.kata.berlin.digitaltime.DigitalTime;
 import com.kata.berlin.digitaltime.InvalidDigitalTimeException;
 import com.kata.berlin.view.BerlinTimeView;
 
-class BerlinTimePresenter {
+public class BerlinTimePresenter {
     private final BerlinTimeView view;
 
     public BerlinTimePresenter(BerlinTimeView view) {
