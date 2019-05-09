@@ -3,6 +3,7 @@ package com.kata.berlin.digitaltime;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 public class DigitalHourTest {
     @Test
@@ -16,10 +17,20 @@ public class DigitalHourTest {
     }
 
     private void assertDigitalHourFor(int hour1, int expectedHour) {
-        DigitalHour digitalHour = new DigitalHour(hour1);
+        DigitalHour digitalHour = null;
+        try {
+            digitalHour = new DigitalHour(hour1);
+        } catch (InvalidDigitalHourException e) {
+            fail();
+        }
 
         int hour = digitalHour.hour();
 
         assertEquals(expectedHour, hour);
+    }
+
+    @Test(expected = InvalidDigitalHourException.class)
+    public void shouldThrowInvalidDigitalHourExceptionWhenHourIsInNegative() throws InvalidDigitalHourException {
+        new DigitalHour(-1);
     }
 }
