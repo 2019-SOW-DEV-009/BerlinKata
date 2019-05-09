@@ -63,4 +63,11 @@ public class BerlinTimeTest {
 
         assertEquals("RROO", berlinFiveHour.fiveHour());
     }
+
+    @Test
+    public void shouldReturnYRROORROOYYRYYRYYRYYYYYO() {
+        String time = berlinTime.time();
+
+        assertEquals("YRROORROOYYRYYRYYRYYYYYO", time);
+    }
 }
