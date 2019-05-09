@@ -16,19 +16,15 @@ public class BerlinSingleMinute {
     }
 
     public String singleMinute() {
-        int minute = digitalMinute.minute();
-        switch (minute) {
+        int proportionToFive = digitalMinute.minute() % 5;
+        switch (proportionToFive) {
             case 1:
-            case 6:
                 return ONE_MINUTE;
             case 2:
-            case 7:
                 return TWO_MINUTE;
             case 3:
-            case 8:
                 return THREE_MINUTE;
             case 4:
-            case 9:
                 return FOUR_MINUTE;
             default:
                 return ZERO_MINUTE;
