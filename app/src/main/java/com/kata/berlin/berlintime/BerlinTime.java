@@ -18,7 +18,7 @@ class BerlinTime {
     }
 
     public String time() {
-        return null;
+        return berlinSecond.seconds() + fiveHours.fiveHour() + singleHour.singleHour() + fiveMinutes.fiveMinute() + singleMinutes.singleMinute();
     }
 
     public BerlinSecond seconds() {
