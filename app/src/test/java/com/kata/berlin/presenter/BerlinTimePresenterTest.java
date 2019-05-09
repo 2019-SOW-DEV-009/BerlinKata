@@ -1,7 +1,6 @@
 package com.kata.berlin.presenter;
 
 import com.kata.berlin.berlintime.BerlinTime;
-import com.kata.berlin.digitaltime.InvalidDigitalTimeException;
 import com.kata.berlin.view.BerlinTimeView;
 
 import org.junit.Before;
@@ -20,21 +19,21 @@ public class BerlinTimePresenterTest {
     private BerlinTimePresenter presenter;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         inputText = "12:45:58";
         view = mock(BerlinTimeView.class);
         presenter = new BerlinTimePresenter(view);
     }
 
     @Test
-    public void shouldCallShowBerlinTimeOnViewWhenConvertToBerlinTimeIsCalled() throws InvalidDigitalTimeException {
+    public void shouldCallShowBerlinTimeOnViewWhenConvertToBerlinTimeIsCalled() {
         presenter.convertToBerlinTime(inputText);
 
         verify(view, times(1)).showBerlinTime(any(BerlinTime.class));
     }
 
     @Test
-    public void shouldCallInvalidInputTextOnViewWhenConvertToBerlinTimeAndInputIsInvalid() throws InvalidDigitalTimeException {
+    public void shouldCallInvalidInputTextOnViewWhenConvertToBerlinTimeAndInputIsInvalid() {
         presenter.convertToBerlinTime("aa:25:48");
 
         verify(view, times(1)).showInvalidInput(anyString());
