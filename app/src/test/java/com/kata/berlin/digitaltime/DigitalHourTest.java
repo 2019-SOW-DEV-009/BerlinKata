@@ -16,6 +16,11 @@ public class DigitalHourTest {
         assertDigitalHourFor(1, 1);
     }
 
+    @Test(expected = InvalidDigitalHourException.class)
+    public void shouldThrowInvalidDigitalHourExceptionWhenHourIsInNegative() throws InvalidDigitalHourException {
+        new DigitalHour(-1);
+    }
+
     private void assertDigitalHourFor(int hour1, int expectedHour) {
         DigitalHour digitalHour = null;
         try {
@@ -27,10 +32,5 @@ public class DigitalHourTest {
         int hour = digitalHour.hour();
 
         assertEquals(expectedHour, hour);
-    }
-
-    @Test(expected = InvalidDigitalHourException.class)
-    public void shouldThrowInvalidDigitalHourExceptionWhenHourIsInNegative() throws InvalidDigitalHourException {
-        new DigitalHour(-1);
     }
 }
