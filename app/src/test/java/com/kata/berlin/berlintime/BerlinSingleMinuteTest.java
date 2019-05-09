@@ -1,6 +1,5 @@
-package com.kata.berlin;
+package com.kata.berlin.berlintime;
 
-import com.kata.berlin.berlintime.BerlinSingleMinute;
 import com.kata.berlin.digitaltime.DigitalMinute;
 import com.kata.berlin.digitaltime.InvalidDigitalMinuteException;
 
