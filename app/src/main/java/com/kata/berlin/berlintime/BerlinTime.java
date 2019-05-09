@@ -2,7 +2,7 @@ package com.kata.berlin.berlintime;
 
 import com.kata.berlin.digitaltime.DigitalTime;
 
-class BerlinTime {
+public class BerlinTime {
     private final BerlinSecond berlinSecond;
     private final FiveMinute fiveMinutes;
     private final SingleMinute singleMinutes;
