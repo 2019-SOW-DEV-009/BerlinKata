@@ -79,6 +79,18 @@ public class FiveMinuteTest {
         assertBerlinFiveMinuteFor(55, "YYRYYRYYRYY");
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoFiveMinuteObjectAreEqual() throws InvalidDigitalMinuteException {
+        Minute minuteOne = new Minute(29);
+        Minute minuteTwo = new Minute(29);
+
+        FiveMinute fiveMinuteTwo = new FiveMinute(minuteOne);
+        FiveMinute fiveMinuteOne = new FiveMinute(minuteTwo);
+
+        assertEquals(fiveMinuteOne, fiveMinuteTwo);
+    }
+
+
     private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) {
         Minute digitalTime = null;
         try {

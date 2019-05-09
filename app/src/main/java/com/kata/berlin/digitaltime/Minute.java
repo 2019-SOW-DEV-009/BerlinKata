@@ -16,6 +16,14 @@ public class Minute {
         return minute;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Minute)) return false;
+        Minute minute1 = (Minute) o;
+        return minute == minute1.minute;
+    }
+
     private void validate(int minute) throws InvalidDigitalMinuteException {
         if (minute < 0) {
             throw new InvalidDigitalMinuteException("Minute cannot be in negative");
