@@ -16,4 +16,14 @@ public class BerlinSecondTest {
 
         assertEquals("Y", seconds);
     }
+
+    @Test
+    public void shouldReturnSecondsAsOWhenSecondsIs1() {
+        DigitalSecond digitalSecond = new DigitalSecond(1);
+        BerlinSecond berlinSecond = new BerlinSecond(digitalSecond);
+
+        String seconds = berlinSecond.seconds();
+
+        assertEquals("O", seconds);
+    }
 }
