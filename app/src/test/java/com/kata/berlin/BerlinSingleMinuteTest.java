@@ -27,4 +27,14 @@ public class BerlinSingleMinuteTest {
 
         assertEquals("YOOO", singleMinute);
     }
+
+    @Test
+    public void shouldReturnSingleMintueAsYYOOWhenDigitalMinuteIs2() {
+        DigitalMinute digitalMinute = new DigitalMinute(2);
+        BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
+
+        String singleMinute = berlinSingleMinute.singleMinute();
+
+        assertEquals("YYOO", singleMinute);
+    }
 }
