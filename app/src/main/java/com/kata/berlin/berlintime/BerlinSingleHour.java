@@ -29,7 +29,7 @@ class BerlinSingleHour {
     }
 
     public String singleHour() {
-        int hour = digitalHour.hour();
-        return SINGLE_HOUR_MAP.get(hour);
+        int hourProportionToFive = digitalHour.hour() % 5;
+        return SINGLE_HOUR_MAP.get(hourProportionToFive);
     }
 }

@@ -34,6 +34,11 @@ public class BerlinSingleHourTest {
         assertSingleHourFor(4, "RRRR");
     }
 
+    @Test
+    public void shouldReturnSingleHourAsOOOOWhenHourIs5() {
+        assertSingleHourFor(5, "OOOO");
+    }
+
     private void assertSingleHourFor(int hour, String expectedSingleHour) {
         DigitalHour digitalHour = null;
         try {
