@@ -20,4 +20,9 @@ public class DigitalTimeTest {
     public void shouldThrowInvalidDigitalTimeExceptionWhenTimeIsNull() throws InvalidDigitalTimeException {
         new DigitalTime(null);
     }
+
+    @Test(expected = InvalidDigitalTimeException.class)
+    public void shouldThrowInvalidDigitalTimeExceptionWhenTimeLengthNot8() throws InvalidDigitalTimeException {
+        new DigitalTime("00:00:1");
+    }
 }
