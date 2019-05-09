@@ -7,12 +7,14 @@ public class DigitalTime {
     private static final String TIME_REGEX = "^[0-2][0-3]:[0-5][0-9]:[0-5][0-9]$";
     private final DigitalSecond digitalSecond;
     private final DigitalHour digitalHour;
+    private final DigitalMinute digitalMinute;
 
     public DigitalTime(String time) throws InvalidDigitalTimeException {
         validate(time);
 
         String[] splitTime = time.split(":");
         digitalSecond = new DigitalSecond(splitTime[2]);
+        digitalMinute = new DigitalMinute(splitTime[1]);
         digitalHour = new DigitalHour(splitTime[0]);
     }
 
@@ -34,5 +36,9 @@ public class DigitalTime {
 
     public DigitalHour hour() {
         return digitalHour;
+    }
+
+    public DigitalMinute minute() {
+        return digitalMinute;
     }
 }

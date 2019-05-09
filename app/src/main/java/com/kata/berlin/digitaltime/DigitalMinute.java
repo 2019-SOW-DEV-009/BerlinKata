@@ -8,6 +8,10 @@ public class DigitalMinute {
         this.minute = minute;
     }
 
+    public DigitalMinute(String minute) throws InvalidDigitalMinuteException {
+        this(Integer.parseInt(minute));
+    }
+
     public int minute() {
         return minute;
     }

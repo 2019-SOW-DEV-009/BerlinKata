@@ -40,4 +40,14 @@ public class DigitalTimeTest {
 
         assertEquals(12, hours);
     }
+
+    @Test
+    public void shouldReturnDigitalMinutesAs58When_12_58_25_IsGiven() throws InvalidDigitalTimeException {
+        DigitalTime digitalTime = new DigitalTime("12:58:25");
+        DigitalMinute digitalMinute = digitalTime.minute();
+
+        int minute = digitalMinute.minute();
+
+        assertEquals(58, minute);
+    }
 }
