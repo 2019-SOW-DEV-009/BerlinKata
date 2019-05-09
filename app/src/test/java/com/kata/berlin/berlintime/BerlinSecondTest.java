@@ -9,21 +9,20 @@ import static org.junit.Assert.assertEquals;
 public class BerlinSecondTest {
     @Test
     public void shouldReturnSecondsAsYWhenInitiatedWith0DigitialSeconds() {
-        DigitalSecond digitalSecond = new DigitalSecond(0);
-        BerlinSecond berlinSecond = new BerlinSecond(digitalSecond);
-
-        String seconds = berlinSecond.seconds();
-
-        assertEquals("Y", seconds);
+        assertBerlinSecondsFor(0, "Y");
     }
 
     @Test
     public void shouldReturnSecondsAsOWhenSecondsIs1() {
-        DigitalSecond digitalSecond = new DigitalSecond(1);
+        assertBerlinSecondsFor(1, "O");
+    }
+
+    private void assertBerlinSecondsFor(int digitalSeconds, String expected) {
+        DigitalSecond digitalSecond = new DigitalSecond(digitalSeconds);
         BerlinSecond berlinSecond = new BerlinSecond(digitalSecond);
 
         String seconds = berlinSecond.seconds();
 
-        assertEquals("O", seconds);
+        assertEquals(expected, seconds);
     }
 }
