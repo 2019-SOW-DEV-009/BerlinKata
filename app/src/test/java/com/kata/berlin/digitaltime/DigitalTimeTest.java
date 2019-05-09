@@ -30,4 +30,14 @@ public class DigitalTimeTest {
     public void shouldThrowInvalidDigitalTimeExceptionWhenTimeContainsAlphabets() throws InvalidDigitalTimeException {
         new DigitalTime("00:aa:00");
     }
+
+    @Test
+    public void shouldReturnDigitalHourAs12When_12_58_25_IsGiven() throws InvalidDigitalTimeException {
+        DigitalTime digitalTime = new DigitalTime("12:58:25");
+        DigitalHour digitalHour = digitalTime.hour();
+
+        int hours = digitalHour.hour();
+
+        assertEquals(12, hours);
+    }
 }
