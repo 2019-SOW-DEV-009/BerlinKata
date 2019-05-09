@@ -24,6 +24,16 @@ public class BerlinSecondTest {
         assertBerlinSecondsFor(3, "O");
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoBerlinSecondsAreEqual() throws InvalidDigitalSecondsException {
+        assertEquals(createBerlinSecondWith(45), createBerlinSecondWith(45));
+    }
+
+    private BerlinSecond createBerlinSecondWith(int seconds) throws InvalidDigitalSecondsException {
+        DigitalSecond digitalSecondOne = new DigitalSecond(seconds);
+        return new BerlinSecond(digitalSecondOne);
+    }
+
     private void assertBerlinSecondsFor(int digitalSeconds, String expected) {
         DigitalSecond digitalSecond = null;
         try {
