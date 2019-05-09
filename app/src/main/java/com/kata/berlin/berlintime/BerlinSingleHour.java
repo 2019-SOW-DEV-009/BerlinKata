@@ -6,6 +6,7 @@ class BerlinSingleHour {
 
     private static final String ZERO_HOUR = "OOOO";
     private static final String ONE_HOUR = "ROOO";
+    private static final String TWO_HOUR = "RROO";
     private final DigitalHour digitalHour;
 
     public BerlinSingleHour(DigitalHour digitalHour) {
@@ -13,8 +14,12 @@ class BerlinSingleHour {
     }
 
     public String singleHour() {
-        if (digitalHour.hour() == 1) {
+        int hour = digitalHour.hour();
+        if (hour == 1) {
             return ONE_HOUR;
+        }
+        if (hour == 2) {
+            return TWO_HOUR;
         }
         return ZERO_HOUR;
     }

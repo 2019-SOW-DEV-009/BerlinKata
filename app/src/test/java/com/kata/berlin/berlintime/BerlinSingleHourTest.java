@@ -18,6 +18,11 @@ public class BerlinSingleHourTest {
         assertSingleHourFor(1, "ROOO");
     }
 
+    @Test
+    public void shouldReturnSingleHourAsRROOWhenHourIs2() throws InvalidDigitalHourException {
+        assertSingleHourFor(2, "RROO");
+    }
+
     private void assertSingleHourFor(int hour, String expectedSingleHour) throws InvalidDigitalHourException {
         DigitalHour digitalHour = new DigitalHour(hour);
         BerlinSingleHour berlinSingleHour = new BerlinSingleHour(digitalHour);
