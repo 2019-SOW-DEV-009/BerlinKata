@@ -29,6 +29,11 @@ public class BerlinFiveHourTest {
         assertBerlinFiveHourFor(15, "RRRO");
     }
 
+    @Test
+    public void shouldReturnFiveHourAsRRRRWhenDigitalHourIs20() {
+        assertBerlinFiveHourFor(20, "RRRR");
+    }
+
     private void assertBerlinFiveHourFor(int hour, String expectedFiveHour) {
         DigitalHour digitalHour = null;
         try {
