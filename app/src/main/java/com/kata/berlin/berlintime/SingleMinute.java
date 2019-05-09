@@ -3,6 +3,7 @@ package com.kata.berlin.berlintime;
 import com.kata.berlin.digitaltime.Minute;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class SingleMinute {
 
@@ -31,5 +32,13 @@ public class SingleMinute {
     public String singleMinute() {
         int proportionToFive = minute.minute() % 5;
         return SINGLE_MINUTE_MAP.get(proportionToFive);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SingleMinute)) return false;
+        SingleMinute that = (SingleMinute) o;
+        return Objects.equals(minute, that.minute);
     }
 }

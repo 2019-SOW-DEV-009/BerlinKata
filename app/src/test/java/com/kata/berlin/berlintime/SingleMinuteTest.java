@@ -59,6 +59,16 @@ public class SingleMinuteTest {
         assertBerlinSingleMinuteFor(9, "YYYY");
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoSingleMinutesAreEqual() throws InvalidDigitalMinuteException {
+        assertEquals(createSingleMinuteWith(36), createSingleMinuteWith(36));
+    }
+
+    private SingleMinute createSingleMinuteWith(int minute) throws InvalidDigitalMinuteException {
+        Minute minuteOne = new Minute(minute);
+        return new SingleMinute(minuteOne);
+    }
+
     private void assertBerlinSingleMinuteFor(int minute, String expectedSingleMinute) {
         Minute digitalMinute = null;
         try {
