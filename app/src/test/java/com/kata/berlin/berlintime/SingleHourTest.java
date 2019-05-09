@@ -39,6 +39,16 @@ public class SingleHourTest {
         assertSingleHourFor(5, "OOOO");
     }
 
+    @Test
+    public void shouldReturnTrueWhenTwoSingleHoursAreEqual() throws InvalidDigitalHourException {
+        assertEquals(createSingleHourWith(11), createSingleHourWith(11));
+    }
+
+    private SingleHour createSingleHourWith(int hour) throws InvalidDigitalHourException {
+        Hour hourOne = new Hour(hour);
+        return new SingleHour(hourOne);
+    }
+
     private void assertSingleHourFor(int hour, String expectedSingleHour) {
         Hour digitalHour = null;
         try {

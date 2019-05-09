@@ -3,6 +3,7 @@ package com.kata.berlin.berlintime;
 import com.kata.berlin.digitaltime.Hour;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 class SingleHour {
 
@@ -31,5 +32,13 @@ class SingleHour {
     public String singleHour() {
         int hourProportionToFive = hour.hour() % 5;
         return SINGLE_HOUR_MAP.get(hourProportionToFive);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof SingleHour)) return false;
+        SingleHour that = (SingleHour) o;
+        return Objects.equals(hour, that.hour);
     }
 }
