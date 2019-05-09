@@ -10,9 +10,13 @@ class BerlinSecond {
     }
 
     public String seconds() {
-        if (digitalSecond.seconds() == 1) {
+        if (isOddSecond()) {
             return "O";
         }
         return "Y";
+    }
+
+    private boolean isOddSecond() {
+        return digitalSecond.seconds() % 2 == 1;
     }
 }

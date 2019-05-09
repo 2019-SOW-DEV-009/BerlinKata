@@ -17,6 +17,11 @@ public class BerlinSecondTest {
         assertBerlinSecondsFor(1, "O");
     }
 
+    @Test
+    public void shouldReturnSecondsAsYWhenSecondsIs3() {
+        assertBerlinSecondsFor(3, "O");
+    }
+
     private void assertBerlinSecondsFor(int digitalSeconds, String expected) {
         DigitalSecond digitalSecond = new DigitalSecond(digitalSeconds);
         BerlinSecond berlinSecond = new BerlinSecond(digitalSecond);
