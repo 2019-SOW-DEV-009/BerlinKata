@@ -10,31 +10,25 @@ import static org.junit.Assert.assertEquals;
 public class BerlinSingleMinuteTest {
     @Test
     public void shouldReturnSingleMinuteAsOOOOWhenInitiatedWith0DigitalMinute() {
-        DigitalMinute digitalMinute = new DigitalMinute(0);
-        BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
-
-        String singleMinute = berlinSingleMinute.singleMinute();
-
-        assertEquals("OOOO", singleMinute);
+        assertBerlinSingleMinuteFor(0, "OOOO");
     }
 
     @Test
     public void shouldReturnSingleMinuteAsYOOOWhenDigitalMinuteIs1() {
-        DigitalMinute digitalMinute = new DigitalMinute(1);
-        BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
-
-        String singleMinute = berlinSingleMinute.singleMinute();
-
-        assertEquals("YOOO", singleMinute);
+        assertBerlinSingleMinuteFor(1, "YOOO");
     }
 
     @Test
     public void shouldReturnSingleMintueAsYYOOWhenDigitalMinuteIs2() {
-        DigitalMinute digitalMinute = new DigitalMinute(2);
+        assertBerlinSingleMinuteFor(2, "YYOO");
+    }
+
+    private void assertBerlinSingleMinuteFor(int minute, String expectedSingleMinute) {
+        DigitalMinute digitalMinute = new DigitalMinute(minute);
         BerlinSingleMinute berlinSingleMinute = new BerlinSingleMinute(digitalMinute);
 
         String singleMinute = berlinSingleMinute.singleMinute();
 
-        assertEquals("YYOO", singleMinute);
+        assertEquals(expectedSingleMinute, singleMinute);
     }
 }
