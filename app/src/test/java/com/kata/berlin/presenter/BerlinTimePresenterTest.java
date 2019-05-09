@@ -29,6 +29,6 @@ public class BerlinTimePresenterTest {
     public void shouldCallShowBerlinTimeOnViewWhenConvertToBerlinTimeIsCalled() throws InvalidDigitalTimeException {
         presenter.convertToBerlinTime(inputText);
 
-        verify(view, times(1)).ShowBerlinTime(any(BerlinTime.class));
+        verify(view, times(1)).showBerlinTime(any(BerlinTime.class));
     }
 }

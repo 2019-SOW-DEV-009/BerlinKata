@@ -15,6 +15,6 @@ class BerlinTimePresenter {
     public void convertToBerlinTime(String inputText) throws InvalidDigitalTimeException {
         DigitalTime digitalTime = new DigitalTime(inputText);
         BerlinTime berlinTime = new BerlinTime(digitalTime);
-        view.ShowBerlinTime(berlinTime);
+        view.showBerlinTime(berlinTime);
     }
 }
