@@ -5,6 +5,10 @@ import java.util.regex.Pattern;
 
 public class DigitalTime {
     private static final String TIME_REGEX = "^[0-2][0-3]:[0-5][0-9]:[0-5][0-9]$";
+    private static final int SECONDS_POSITION = 2;
+    private static final int MINUTES_POSITION = 1;
+    private static final int HOURS_POSITION = 0;
+
     private final DigitalSecond digitalSecond;
     private final DigitalHour digitalHour;
     private final DigitalMinute digitalMinute;
@@ -13,9 +17,9 @@ public class DigitalTime {
         validate(time);
 
         String[] splitTime = time.split(":");
-        digitalSecond = new DigitalSecond(splitTime[2]);
-        digitalMinute = new DigitalMinute(splitTime[1]);
-        digitalHour = new DigitalHour(splitTime[0]);
+        digitalSecond = new DigitalSecond(splitTime[SECONDS_POSITION]);
+        digitalMinute = new DigitalMinute(splitTime[MINUTES_POSITION]);
+        digitalHour = new DigitalHour(splitTime[HOURS_POSITION]);
     }
 
     public DigitalSecond second() {
