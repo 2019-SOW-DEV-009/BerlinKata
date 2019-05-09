@@ -58,4 +58,11 @@ public class BerlinTimeTest {
 
         assertEquals("RROO", berlinSingleHour.singleHour());
     }
+
+    @Test
+    public void shouldReturnBerlinFiveHourAsRROO() {
+        BerlinFiveHour berlinFiveHour = berlinTime.fiveHours();
+
+        assertEquals("RROO", berlinFiveHour.fiveHour());
+    }
 }
