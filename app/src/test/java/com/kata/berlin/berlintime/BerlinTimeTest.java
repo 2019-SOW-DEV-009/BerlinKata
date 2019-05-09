@@ -45,9 +45,9 @@ public class BerlinTimeTest {
 
     @Test
     public void shouldReturnBerlinSingleMinuteAsYYYO() {
-        BerlinSingleMinute berlinSingleMinute = berlinTime.singleMinutes();
+        SingleMinute singleMinute = berlinTime.singleMinutes();
 
-        assertEquals("YYYO", berlinSingleMinute.singleMinute());
+        assertEquals("YYYO", singleMinute.singleMinute());
     }
 
     @Test

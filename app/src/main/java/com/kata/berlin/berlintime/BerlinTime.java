@@ -5,14 +5,14 @@ import com.kata.berlin.digitaltime.DigitalTime;
 class BerlinTime {
     private final BerlinSecond berlinSecond;
     private final FiveMinute fiveMinutes;
-    private final BerlinSingleMinute singleMinutes;
+    private final SingleMinute singleMinutes;
     private final SingleHour singleHour;
     private final FiveHour fiveHours;
 
     public BerlinTime(DigitalTime digitalTime) {
         berlinSecond = new BerlinSecond(digitalTime.second());
         fiveMinutes = new FiveMinute(digitalTime.minute());
-        singleMinutes = new BerlinSingleMinute(digitalTime.minute());
+        singleMinutes = new SingleMinute(digitalTime.minute());
         singleHour = new SingleHour(digitalTime.hour());
         fiveHours = new FiveHour(digitalTime.hour());
     }
@@ -29,7 +29,7 @@ class BerlinTime {
         return fiveMinutes;
     }
 
-    public BerlinSingleMinute singleMinutes() {
+    public SingleMinute singleMinutes() {
         return singleMinutes;
     }
 
