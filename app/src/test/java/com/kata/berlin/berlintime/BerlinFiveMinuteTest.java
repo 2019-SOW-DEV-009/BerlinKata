@@ -59,6 +59,11 @@ public class BerlinFiveMinuteTest {
         assertBerlinFiveMinuteFor(35, "YYRYYRYOOOO");
     }
 
+    @Test
+    public void shouldReturnFiveMinuteAs_YYRYYRYY_3_O_WhenDigitalMinuteIs40() {
+        assertBerlinFiveMinuteFor(40, "YYRYYRYYOOO");
+    }
+
     private void assertBerlinFiveMinuteFor(int minute, String expectedFiveMinute) {
         DigitalMinute digitalTime = null;
         try {

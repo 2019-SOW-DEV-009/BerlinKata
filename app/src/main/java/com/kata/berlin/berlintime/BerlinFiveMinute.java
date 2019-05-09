@@ -14,6 +14,7 @@ class BerlinFiveMinute {
     private static final String TWENTYFIVE_MINUTE = "YYRYYOOOOOO";
     private static final String THIRTY_MINUTE = "YYRYYROOOOO";
     private static final String THIRTY_FIVE_MINUTE = "YYRYYRYOOOO";
+    private static final String FORTY_MINUTE = "YYRYYRYYOOO";
 
     private static final HashMap<Integer, String> FIVE_MINUTE_MAP;
 
@@ -27,6 +28,7 @@ class BerlinFiveMinute {
         FIVE_MINUTE_MAP.put(5, TWENTYFIVE_MINUTE);
         FIVE_MINUTE_MAP.put(6, THIRTY_MINUTE);
         FIVE_MINUTE_MAP.put(7, THIRTY_FIVE_MINUTE);
+        FIVE_MINUTE_MAP.put(8, FORTY_MINUTE);
     }
 
     private final DigitalMinute digitalTime;
