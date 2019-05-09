@@ -8,7 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-public class BerlinSingleHourTest {
+public class SingleHourTest {
     @Test
     public void shouldReturnSingleHourAsOOOOWhenInitiatedWith0Hour() {
         assertSingleHourFor(0, "OOOO");
@@ -46,7 +46,7 @@ public class BerlinSingleHourTest {
         } catch (InvalidDigitalHourException e) {
             fail();
         }
-        BerlinSingleHour berlinSingleHour = new BerlinSingleHour(digitalHour);
+        SingleHour berlinSingleHour = new SingleHour(digitalHour);
 
         String singleHour = berlinSingleHour.singleHour();
 

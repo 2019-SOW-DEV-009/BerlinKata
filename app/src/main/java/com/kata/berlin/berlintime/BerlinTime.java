@@ -6,14 +6,14 @@ class BerlinTime {
     private final BerlinSecond berlinSecond;
     private final FiveMinute fiveMinutes;
     private final BerlinSingleMinute singleMinutes;
-    private final BerlinSingleHour singleHour;
+    private final SingleHour singleHour;
     private final FiveHour fiveHours;
 
     public BerlinTime(DigitalTime digitalTime) {
         berlinSecond = new BerlinSecond(digitalTime.second());
         fiveMinutes = new FiveMinute(digitalTime.minute());
         singleMinutes = new BerlinSingleMinute(digitalTime.minute());
-        singleHour = new BerlinSingleHour(digitalTime.hour());
+        singleHour = new SingleHour(digitalTime.hour());
         fiveHours = new FiveHour(digitalTime.hour());
     }
 
@@ -33,7 +33,7 @@ class BerlinTime {
         return singleMinutes;
     }
 
-    public BerlinSingleHour singleHour() {
+    public SingleHour singleHour() {
         return singleHour;
     }
 
