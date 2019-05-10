@@ -15,11 +15,20 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 ### Converting Digital Time to Berlin Time :
 User can input time in the format of hh:mm:ss (Digital Time) and convert it to Berlin Time Format
 
-# How to run the app on device (Windows)
+# How to run the app on device (From Windows machine)
 ```sh
 $ gradlew installDebug
 ```
-# Run unit tests
+# How to run the app on device (From mac machine)
+```sh
+$ sh ./gradlew installDebug
+```
+
+# Run unit tests (From Windows machine)
 ```sh
 $ gradlew testDebugUnitTest
+```
+# Run unit tests (From mac machine)
+```sh
+$ sh ./gradlew testDebugUnitTest
 ```
